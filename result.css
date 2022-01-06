@@ -1,0 +1,48 @@
+#result { 
+    display: none; /*첫 화면에선 안보이게*/
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    text-align: center;
+    border-radius: 20px; /*테두리 둥글게*/
+}
+
+.resultname{
+    font-size: 26px;
+    text-align: center;
+
+}
+
+.resultshort {
+    font-size: 30px;
+    text-align: center;
+
+}
+
+.resultDesc{
+    font-size: 20px;
+    text-align: center;
+
+}
+
+
+.btl {
+    color: #003087;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    display: block;
+    width: 30%;
+    font-size: 20px;
+  }
+  
+.btl:hover, .btn:focus {
+    color: white;
+    background-color: #003087;
+}
+
+.cc{
+    color: #003087;
+    font-size: 20px;
+}
+

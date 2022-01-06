@@ -1,0 +1,62 @@
+/*main세션 css*/
+html { font-size: 8vw; }
+
+#main{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 20px; /*테두리 둥글게*/
+    font-size: 40px; 
+    margin-top: 15vh;}
+
+
+h1 {color: #003087;
+    text-decoration: none; 
+    text-shadow: 4px 4px 2px gray;
+    font-size:1.2rem;
+}
+
+.pp{
+  font-size: 0.3rem;
+  color: white;
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+
+}
+
+.cp{
+  font-size:0.25rem;
+  text-align:center;
+  margin-bottom: 10vh;
+
+}
+
+p {
+  font-size: 0.3rem;
+}
+
+.btn {
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px 15px 10px;
+  display: block;
+  width: 50%;
+  font-size: 0.25rem;
+
+}
+
+.btn:hover, .btn:focus {
+  background-color: white;
+  background-image: url(img/sym01_l.gif); 
+  font-size: 0px;
+  width: 12vw;
+  height: 15vh;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: 13vw auto;
+}
+
+
+
