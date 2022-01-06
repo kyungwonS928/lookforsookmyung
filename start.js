@@ -65,8 +65,8 @@ function goNext(qIdx, ss){
     var a = document.querySelector('.answerBox');
     var answer = document.createElement('button');
     answer.classList.add('answerList');
-    answer.classList.add('my-3');
-    answer.classList.add('py-3');
+    answer.classList.add('my-1');
+    answer.classList.add('py-2');
     answer.classList.add('mx-auto');
     answer.classList.add('fadeIn');
   
