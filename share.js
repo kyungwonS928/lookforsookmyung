@@ -5,7 +5,7 @@ function kakaoShare(){
     var resultAlt=resultImg.firstElementChild.alt;
     const ShareTitle= '당신의 숙명은?';
     const shareDoc=infoList[resultAlt].name;
-    const shareImage=url+"img/image-"+resultAlt+'.jpg';
+    const shareImage=url+'img/image'+resultAlt+'.jpg';
     Kakao.Link.sendDefault(
         {
             objectType: 'feed',
