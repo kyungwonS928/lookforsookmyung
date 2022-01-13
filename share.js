@@ -6,26 +6,12 @@ function kakaoShare(){
     const ShareTitle= '당신의 숙명은?';
     const shareDoc=infoList[resultAlt].name;
     const shareImage=url+'img/image'+resultAlt+'.jpg';
-    Kakao.Link.sendDefault(
+    Kakao.Link.sendCustom(
         {
-            objectType: 'feed',
-            content: {
-            title: ShareTitle,
-            description: shareDoc,
-            imageUrl:shareImage,
-            link: {
-                mobileWebUrl: 'https://developers.kakao.com',
-                androidExecutionParams: 'test',
-            },
-            },
-            buttons: [
-            {
-                title: '나도 참여하기',
-                link: {
-                mobileWebUrl: 'https://developers.kakao.com',
-                },
-            },
-            ]
-        }
-    )
+            templateId: 68745,
+            templateArgs: {
+                'THU' : shareImage,
+                'DESC': shareDoc + "입니다",
+            
+        }})
 };
