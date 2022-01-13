@@ -99,6 +99,7 @@ function begin(){
   main.style.WebkitAnimation = "fadeOut 1s";
   main.style.animation = "fadeOut 1s";
 
+  
   var name = prompt("   그대는 예비 눈송이가 될 숙명이군! 그대의 이름을 알고싶어요");
   if (name === null) {
     alert('취소되었습니다');

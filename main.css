@@ -42,21 +42,25 @@ p {
   border-radius: 20px;
   padding: 5px 10px 15px 10px;
   display: block;
-  width: 50%;
+  width: 50vw;
+  height: 10vw;
   font-size: 0.7rem;
 
 }
 
-.btn:hover, .btn:focus {
+.btn:hover, .btn:active {
   background-color: white;
   background-image: url(img/sym01_l.gif); 
   font-size: 0px;
-  width: 12vw;
-  height: 6vh;
+  width: 30vw;
+  height: 30vw;
+
   background-position: center; 
   background-repeat: no-repeat; 
-  background-size: 13vw auto;
+  background-size: 100% 100%;
 }
+
+
 
 
 
