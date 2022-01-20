@@ -3,6 +3,8 @@ const qna = document.querySelector("#qna"); //querlySelector는 document에서 �
 
 const result = document.querySelector("#result");
 const select = [0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0]
+const select2 = [0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0]
+
 
 
 function setResult() {
@@ -26,10 +28,24 @@ function setResult() {
 }
 
 function calResult() {
-
+  // if (Math.max(...select))
+  var max=0
   var result = select.indexOf(Math.max(...select));
-  return result;
-
+  while(true){
+    result= indexOf(Math.max(...select), result+1); 
+    if(max<select2[result]){
+      max=select2[result];
+    }
+    return max;
+  }
+  // var result=0;
+  // while(result){
+  //   var result = indexOf(Math.max(...select));
+  //   if(max<select2[result]){
+  //     max=select2[result];
+  //   }
+  //   return max;
+  // }
 }
 function goResult() {
   qna.style.WebkitAnimation = "fadeOut 1s";
@@ -82,9 +98,17 @@ function goNext(qIdx, ss){
       }
       setTimeout(() => {
         var target = qnaList[qIdx].a[idx].type;
+        var target2 = qnaList[qIdx].a[idx].best;
         for(let j=0;j<target.length;j++){
           select[target[j]] += 1;
-        }    
+        }
+        if (target2!=null){
+          for(let j=0;j<target2.length;j++){
+            select2[target2[j]] += 1;
+            select[target2[j]] += 1;
+          }  
+        }
+          
         for(let i = 0; i < children.length; i++){
           children[i].style.display = 'none';
         }
