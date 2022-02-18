@@ -5,8 +5,6 @@ const result = document.querySelector("#result");
 const select = [0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0]
 const select2 = [0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0,0, 0, 0, 0, 0, 0, 0,0, 0, 0]
 
-
-
 function setResult() {
   let point = calResult();
   const resultName = document.querySelector('.resultname');
@@ -28,25 +26,24 @@ function setResult() {
 }
 
 function calResult() {
-  // if (Math.max(...select))
-  var max=0
+
   var result = select.indexOf(Math.max(...select));
-  while(true){
-    result= indexOf(Math.max(...select), result+1); 
-    if(max<select2[result]){
-      max=select2[result];
-    }
-    return max;
+  var maxnum = new Array();
+
+  for(let i = 0; result !=-1; i++) {
+    maxnum[i] = result;
+    result = select.indexOf(Math.max(...select), result +1);
   }
-  // var result=0;
-  // while(result){
-  //   var result = indexOf(Math.max(...select));
-  //   if(max<select2[result]){
-  //     max=select2[result];
-  //   }
-  //   return max;
-  // }
+
+  if(maxnum.length>1) {
+    result = select2.indexOf(Math.max(...select2));
+  }
+  else { result = maxnum[0]; }
+
+  return result;
+
 }
+
 function goResult() {
   qna.style.WebkitAnimation = "fadeOut 1s";
   qna.style.animation = "fadeOut 1s";
@@ -62,11 +59,12 @@ function goResult() {
   calResult();
  }
 
-function goNext(qIdx, ss){
+function goNext(qIdx, ss){      
   if(ss-1 == 20) {
     goResult();
     return;
   }
+
   var q = document.querySelector('.qBox');
   q.innerHTML = qnaList[qIdx].q;
   for(let i in qnaList[qIdx].a){
@@ -97,18 +95,19 @@ function goNext(qIdx, ss){
         children[i].style.animation = "fadeOut 0.5s";
       }
       setTimeout(() => {
-        var target = qnaList[qIdx].a[idx].type;
+        var target = qnaList[qIdx].a[idx].type;        
         var target2 = qnaList[qIdx].a[idx].best;
+
         for(let j=0;j<target.length;j++){
           select[target[j]] += 1;
-        }
+        }    
         if (target2!=null){
           for(let j=0;j<target2.length;j++){
             select2[target2[j]] += 1;
-            select[target2[j]] += 1;
+
           }  
-        }
-          
+        }   
+ 
         for(let i = 0; i < children.length; i++){
           children[i].style.display = 'none';
         }
